@@ -1,9 +1,12 @@
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0px;
     background: #20242D;
     font-family: "Roboto", sans-serif;
-    scroll-behavior: smooth;
 }
 
 h2{
