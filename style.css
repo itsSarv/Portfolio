@@ -41,8 +41,8 @@ a{
 }
 
 a:hover{
-    color: #01edfec3;   
-    font-style: bold;
+    color: #DB2777;   
+    font-style: bold;   
     border-radius: 5px;
 }
 
@@ -131,7 +131,6 @@ a:hover{
 
 
 #services{
-    height: 100vh;
     padding: 100px 100px;
 }
 
@@ -152,7 +151,7 @@ a:hover{
     margin: 50px 0px;
 }
 
-.firstservice{
+.firstservice, .secondservice, .thirdservice{
     background-color: rgba(64, 64, 64, 0.433);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 2px solid #DB2777;
@@ -161,23 +160,72 @@ a:hover{
     padding: 50px 50px;
 }
 
-.secondservice{
-    background-color: rgba(64, 64, 64, 0.433);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 2px solid #DB2777;
-    color: white;
-    border-radius: 3%;
-    padding: 50px 50px;
-}
-.secondservice:hover{
+.firstservice:hover, .secondservice:hover, .thirdservice:hover{
     background-color: #DB2777
 }
 
-.thirdservice{
-    background-color: rgba(64, 64, 64, 0.433);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 2px solid #DB2777;
-    color: white;
-    border-radius: 3%;
-    padding: 50px 50px;
+#contact {
+    color: #fff;        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contact-container {
+    background-color: #222; 
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+.contact-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #f1f1f1;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.contact-form label {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 1px solid #DB2777;
+}
+
+.submit-btn {
+    background-color: #DB2777;; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: green;
 }
