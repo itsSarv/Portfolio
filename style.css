@@ -15,12 +15,12 @@ body{
 }
 
 .Nav{
+    position: sticky;
     display : flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 15px 80px;
-    position: sticky;
     top: 0;
     z-index: 100;
 }
@@ -43,7 +43,95 @@ body{
     border-radius: 5px;
 }
 
+/* css for home section */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0px 10px;
+    gap: 50px;
+    height: 90vh;
+    position: relative;
+    overflow: hidden;   
+}
 
+#home h1 {
+    font-size: 2.5rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+#home h1 span {
+    color: #01edfec3;
+}
+
+.div-left a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 30px;
+}
+
+.div-left a:hover {
+    color: #fff;
+    border: 2px solid #01edfec3;
+    letter-spacing: 0.15rem;
+    background-color: rgba(1, 237, 254, 0.2);
+}
+
+.div-right div {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeInRight 2s ease-out forwards;
+}
+
+
+.div-right img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.div-right img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* animatiion section in home page */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+/* css for about section */
 #about{
     color: white;
     display: flex;
@@ -52,6 +140,9 @@ body{
 }
 #about img{
     border-radius: 5%;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1.5s ease-out forwards;
 }
 
 #about h1{
@@ -84,41 +175,91 @@ body{
     padding-top: 20px;
 }
 
-/* 
-#services{
-    padding: 100px 100px;
+/* css for service section */
+.service{
+    width: 100%;
+    padding: 100px 0px;
 }
 
-#services h1{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2.75rem;
-    margin: 0;
+.title h2{
     color: white;
+    font-size: 50px;
+    width: 1130px;
+    margin: 30px auto;
     text-align: center;
 }
 
-.myservices{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    width: 100%;
-    justify-content: space-evenly;
-    gap: 20px;
-    margin: 50px 0px;
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
 }
 
-.firstservice, .secondservice, .thirdservice{
-    background-color: rgba(64, 64, 64, 0.433);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 2px solid #DB2777;
-    border-radius: 3%;
+.card{
+    height: 365px;
+    width: 335px;
+    padding: 20px 35px;
+    background: #191919;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;   
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.card i{
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    margin: 25px 0px;
+    color: #01edfec3;
+}
+
+.card h5{
+    color: white; 
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.pra p{
     color: white;
-    padding: 50px 50px;
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 25px;
 }
 
-.firstservice:hover, .secondservice:hover, .thirdservice:hover{
-    background-color: #DB2777
-} */
+.card .button{
+    background-color: #01edfec3;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 9px 22px;
+    border-radius: 30px;
+    transition: .4s;
+}
 
+.card .button:hover{
+    background-color: transparent;
+    border: 2px solid #01edfec3;
+    cursor: pointer;
+}
+
+.pra p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card:hover .pra p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* css for contact section */
 #contact {
     color: #fff;        
     display: flex;
@@ -183,170 +324,4 @@ body{
 
 .submit-btn:hover {
     background-color: green;
-}
-
-
-#home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 0px 10px;
-    gap: 50px;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
-
-
-#home h1 {
-    font-size: 2.5rem;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-
-#home h1 span {
-    color: #01edfec3;
-}
-
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.div-left a {
-    text-decoration: none;
-    color: white;
-    border: 1px solid #fff;
-    padding: 10px 30px;
-    transition: 0.5s;
-    opacity: 0;
-    animation: fadeInUp 1.5s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
-
-.div-left a:hover {
-    color: #fff;
-    border: 2px solid #01edfec3;
-    letter-spacing: 0.15rem;
-    background-color: rgba(1, 237, 254, 0.2);
-}
-
-
-.div-right div {
-    opacity: 0;
-    transform: translateX(50px);
-    animation: fadeInRight 2s ease-out forwards;
-}
-
-
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.div-right img {
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.div-right img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.service{
-    width: 100%;
-    padding: 100px 0px;
-}
-
-.title h2{
-    color: white;
-    font-size: 50px;
-    width: 1130px;
-    margin: 30px auto;
-    text-align: center;
-}
-
-.box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 400px;
-}
-
-.card{
-    height: 365px;
-    width: 335px;
-    padding: 20px 35px;
-    background: #191919;
-    margin: 15px;
-    position: relative;
-    overflow: hidden;
-    text-align: center;   
-}
-
-.card i{
-    font-size: 50px;
-    display: block;
-    text-align: center;
-    margin: 25px 0px;
-    color: #01edfec3;
-}
-
-.card h5{
-    color: white; 
-    font-size: 23px;
-    margin-bottom: 15px;
-}
-
-.pra p{
-    color: #fcfc;
-    font-size: 16px;
-    line-height: 27px;
-    margin-bottom: 25px;
-}
-
-.card .button{
-    background-color: #01edfec3;
-    color: white;
-    text-decoration: none;
-    border: 2px solid transparent;
-    font-weight: bold;
-    padding: 9px 22px;
-    border-radius: 30px;
-    transition: .4s;
-}
-
-.card .button:hover{
-    background-color: transparent;
-    border: 2px solid #01edfec3;
-    cursor: pointer;
-}
-
-.pra p {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.card:hover .pra p {
-    opacity: 1;
-    transform: translateY(0);
 }
